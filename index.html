@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>Polarisの主页</title>
+    <meta name="keywords" content="Polaris,mcm,主页,Homepage">
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /> 
+    <link rel="stylesheet" type="text/css" href="FiraCode.css">
+    <link rel="stylesheet" type="text/css" href="Polaris.css">
+</head>
+
+<body onload="startTime()">
+    <div id="box">
+        <div class="meBox">
+            <div class="headPhoto"></div>
+            <div class="meBox-title">
+                <p>Polaris</p>
+                <div class="fg"></div>
+            </div>
+            <div class="meBox-text">
+                <p>想学人工智能啊</p>
+                <p>📱💻🎧🖱️</p>
+                <a href="https://apple-narwhal-b62.notion.site/808ad60d4cf14cf2abea8baf645f2b67">leetcode算法笔记<br>(notion)</a>
+				<!--
+                <br>
+                <a href="https://github.com/Polaris/Unlock_MIUI_ThemeManager/">MIUI主题破解<br>(Magisk Module)</a>
+                <br>
+                <br>
+                <a href="https://www.coolapk.com/apk/com.mcm.miuihome/">MiuiHome<br>(Xposed Module)</a>
+			-->
+            </div>
+			<!--
+            <div class="meBox-Button1">
+                <a href="https://github.com/Polaris/">GitHub</a>
+            </div>
+            <div class="meBox-Button2">
+                <a href="https://www.coolapk.com/u/680367">Coolapk</a>
+            </div>
+			
+			-->
+        </div>
+        <div id="cmdBox">
+            <div class="cmd">
+                <div class="click">
+                    <div class="red"></div>
+                    <div class="yellow"></div>
+                    <div class="green"></div>
+                </div>
+                <div class="title">
+                    <span>Polaris - mcm</span>
+                </div>
+                <div class="cmdText">
+                    <span style="color: rgb(0, 190, 0);">mcm@Polaris</span>
+                    <span style="color: blue;">~</span>
+                    <span style="color: rgb(39, 39, 39);">cat ./About.txt</span>
+                    <p>昵称: Polaris</p>
+                    <p>性别: 男</p>
+                    <p>年龄: <span id="ageSpan"></span><br /></p>
+                    <p>地址: 河南，中国</p>
+                    <span style="color: rgb(0, 190, 0);">mcm@Polaris</span>
+                    <span style="color: blue;">~</span>
+                    <span style="color: rgb(39, 39, 39);">cat ./More.txt</span>
+                    <p>啥也不会 QAQ</p>
+                    <span style="color: rgb(0, 190, 0);">mcm@Polaris</span>
+                    <span style="color: blue;">~</span>
+                    <span style="color: rgb(39, 39, 39);">sudo rm -rf /*</span>
+                    <p>
+                    <span style="color: rgb(0, 190, 0);">mcm@Polaris</span>
+                    <span style="color: blue;">~</span>
+                </div>
+            </div>
+            <div class="cmd cmd2">
+                <div class="click">
+                    <div class="red"></div>
+                    <div class="yellow"></div>
+                    <div class="green"></div>
+                </div>
+                <div class="title">
+                    <span>Polaris - mcm</span>
+                </div>
+                <div class="cmdText">	
+					
+                    <span style="color: rgb(0, 190, 0);">mcm@Polaris</span>
+					<span style="color: rgb(39, 39, 39);">./Weather.sh</span>
+                    <div id="he-plugin-simple"></div>
+					
+                    <span style="color: rgb(0, 190, 0);">mcm@Polaris</span>
+                    <span style="color: blue;">~</span>				
+                    <span style="color: rgb(39, 39, 39);">./Link.sh</span>
+                    <ul class="ul"><!--
+                        <li><a href="https://od.Polaris.top/">杂货间(网盘)</a></li>
+                        <li><a href="https://font.Polaris.top/">字体字重测试</a></li>
+                        <li><a href="https://music.Polaris.top/">YesPlayMusic</a></li>
+                        <li><a href="https://icon.Polaris.top/">获取高质量应用图标</a></li>
+						-->
+                    </ul>
+					
+                    <span style="color: rgb(0, 190, 0);">mcm@Polaris</span>
+                    <span style="color: blue;">~</span>
+                    <span style="color: rgb(39, 39, 39);">./yiyan.sh</span>
+                    <p id="hitokoto">一言获取中🤣...</p>
+                    <span style="color: rgb(0, 190, 0);">mcm@Polaris</span>
+                    <span style="color: blue;">~</span>
+                    <span style="color: rgb(39, 39, 39);">./Date.sh</span>
+                    <br />
+                    <span id="nowDateTimeSpan"></span>
+                    <br />
+                    <span style="color: rgb(0, 190, 0);">mcm@Polaris</span>
+                    <span style="color: blue;">~</span>
+                    <span style="color: rgb(39, 39, 39);">./API.sh</span>
+                    <p><a href="https://hitokoto.cn/">一言API</a>丨<a href="https://tianqiapi.com/">天气API</a></p>
+                    <span style="color: rgb(0, 190, 0);">mcm@Polaris</span>
+                    <span style="color: blue;">~</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <p>来自<br>https://github.com/YuKongA/HomePage</p>
+    </div>
+    <script>
+        fetch("https://v1.hitokoto.cn")
+            .then(response => response.json())
+            .then(data => {
+                const hitokoto = document.getElementById("hitokoto")
+                hitokoto.innerText = data.hitokoto + "—" + "「" + data.from + "」"
+            })
+            .catch(console.error)
+    </script>
+    <script language="JavaScript">
+        function startTime() {
+            var today = new Date();
+            var yyyy = today.getFullYear();
+            var MM = today.getMonth() + 1;
+            var dd = today.getDate();
+            var hh = today.getHours();
+            var mm = today.getMinutes();
+            var ss = today.getSeconds();
+            MM = checkTime(MM);
+            dd = checkTime(dd);
+            mm = checkTime(mm);
+            ss = checkTime(ss);
+            var day;
+            if (today.getDay() == 0) day = "星期日"
+            if (today.getDay() == 1) day = "星期一"
+            if (today.getDay() == 2) day = "星期二"
+            if (today.getDay() == 3) day = "星期三"
+            if (today.getDay() == 4) day = "星期四"
+            if (today.getDay() == 5) day = "星期五"
+            if (today.getDay() == 6) day = "星期六"
+            document.getElementById('nowDateTimeSpan').innerHTML = yyyy + "年" + MM + "月" + dd + "日 " + hh + ":" + mm + ":" + ss + "   " + day;
+            document.getElementById('ageSpan').innerHTML = yyyy - 2000
+            setTimeout('startTime()', 1000);
+        }
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i;
+            }
+            return i;
+        }
+    </script>
+
+	<script>
+        WIDGET = {
+            "CONFIG": {
+                "modules": "21043",
+                "background": "5",
+                "tmpColor": "272727",
+                "tmpSize": "14",
+                "cityColor": "272727",
+                "citySize": "14",
+                "aqiColor": "272727",
+                "aqiSize": "14",
+                "weatherIconSize": "20",
+                "alertIconSize": "14",
+                "padding": "0px 0px 0px 0px",
+                "shadow": "0",
+                "language": "auto",
+                "fixed": "false",
+                "vertical": "center",
+                "horizontal": "left",
+                "key": "39d5414136a24548ac8fd6a41a47c62e"
+            }
+        }
+    </script>
+    <script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script>
+</body>
+
+</html>
